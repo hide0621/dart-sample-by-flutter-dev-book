@@ -25,12 +25,12 @@ void List2_2_2() {
   print(baseList);
 
   // 固定長のリストを新しく定義する
-  final fixedLenghtList = List.unmodifiable(baseList);
+  final fixedLengthList = List.unmodifiable(baseList);
 
-  print(fixedLenghtList);
+  print(fixedLengthList);
 
   // 以下のコードはエラーになる
-  // fixedLenghtList.add(5); // Unhandled exception: Unsupported operation: Cannot add to an unmodifiable list
+  // fixedLengthList.add(5); // Unhandled exception: Unsupported operation: Cannot add to an unmodifiable list
 }
 
 void List2_2_3() {
