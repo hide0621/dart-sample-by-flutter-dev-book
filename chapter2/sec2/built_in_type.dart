@@ -52,4 +52,10 @@ void List2_2_3() {
   // 名前付きフィールドの記述は等値性に影響を与えない
   final record5 = (name: 'apple', price: 100);
   print(record4 == record5); // true
+
+  // 型注釈の中で位置フィールドに名前を付与できる
+  // この場合、フィールド同士で等値性に影響を与えない（ただし、名前付きフィールド＝位置フィールドとはならないので注意）
+  final (int price, String name) record6 = (100, 'apple');
+  final (int x, String y) record7 = (100, 'apple');
+  print(record6 == record7); // true
 }
