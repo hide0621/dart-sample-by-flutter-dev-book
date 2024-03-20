@@ -79,3 +79,19 @@ void List2_2_3() {
   print(record8.$1); // 99
   print(record9.$1); // 99
 }
+
+void List2_2_4() {
+  // Object型は全てのクラス（型）のoriginのようなもので、それらのスーパークラスである
+  // おそらくは各クラスはこれをwrapしているので、Object型の変数にはどんな型の値も代入できる（共通項はObject、ということ）
+
+  final List1 = [0, 'cake', true];
+  print(List1.runtimeType); // List<Object>
+
+  // dynamicは特殊な型で、コンパイル時に型チェックが行われない
+  // また、存在しないメソッドを呼び出してもエラーにならず、nullかどうかの判定もしない
+  // よって、実行時エラーのリスクが高まるので、明確な理由がない限り使用を避けるべき
+  // 代わりに先述のObject型を使用することが推奨される
+
+  final List<dynamic> List2 = [0, 'cake', true];
+  print(List2.runtimeType); // List<dynamic>
+}
