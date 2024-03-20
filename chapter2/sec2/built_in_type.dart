@@ -49,7 +49,7 @@ void List2_2_3() {
   final ({int price, String name}) record4 = record3;
   print(record4);
 
-  // 名前付きフィールドの記述は等値性に影響を与えない
+  // 名前付きフィールドの記述順序は等値性に影響を与えない
   final record5 = (name: 'apple', price: 100);
   print(record4 == record5); // true
 
@@ -58,4 +58,24 @@ void List2_2_3() {
   final (int price, String name) record6 = (100, 'apple');
   final (int x, String y) record7 = (100, 'apple');
   print(record6 == record7); // true
+
+  // 名前付きフィールドと位置フィールドを混在させることもできる
+  final record8 = (price: 300, name: 'cake', 99);
+  print(record8); // (99, name: cake, price: 300)
+  // 位置フィールドに型注釈をする際は、その記述を先頭に書く
+  final (int count, {String name, int price}) record9 =
+      record8; // 名前付きフィールドは記述順序の違いによって等値性に影響を与えない
+  print(record9); // (99, name: cake, price: 300)
+  print(record9 == record8); // true
+
+  // 名前付きフィールドのゲッターはこう
+  print(record9.name); // cake
+
+  // 位置フィールドのゲッターはこう
+  print(record1.$1); // 300
+  print(record6.$1); // 100
+
+  // 位置フィールドと名前付きフィールドを混在させたrecordの中から、位置フィールドの値を取り出すこともできる
+  print(record8.$1); // 99
+  print(record9.$1); // 99
 }
