@@ -45,3 +45,14 @@ void List2_4_4() {
 
   print('a: $a, b: $b'); // a: -1, b: 0
 }
+
+// 三項演算子
+void List2_4_5() {
+  int a = 10;
+  int b = 20;
+
+  // aがbより大きい場合はaを、それ以外の場合はbを代入
+  int c = a > b ? a : b;
+
+  print('c: $c'); // c: 20
+}
