@@ -56,3 +56,20 @@ void List2_4_5() {
 
   print('c: $c'); // c: 20
 }
+
+// カスケード記法
+void List2_4_6() {
+  // カスケード記法を使わない場合
+  var sb = StringBuffer();
+  sb.write('Dart');
+  sb.write('Flutter');
+  sb.write('Firebase');
+  print(sb.toString()); // DartFlutterFirebase
+
+  // カスケード記法を使う場合
+  var sb2 = StringBuffer()
+    ..write('Dart')
+    ..write('Flutter')
+    ..write('Firebase');
+  print(sb2.toString()); // DartFlutterFirebase
+}
