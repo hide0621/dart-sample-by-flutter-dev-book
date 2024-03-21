@@ -89,3 +89,27 @@ void List2_4_7() {
   var list4 = [...list1, ...list2];
   print(list4); // [1, 2, 3, 4, 5, 6]
 }
+
+// 制御構文演算子
+void List2_4_8() {
+  var flag = true;
+
+  // flagがtrueの場合は3を追加
+  final List1 = [0, 1, 2, if (flag) 3, 4];
+
+  print(List1); // [0, 1, 2, 3, 4]
+
+  flag = false;
+
+  // flagがfalseの場合は3を追加しない
+  final List2 = [0, 1, 2, if (flag) 3, 4];
+
+  print(List2); // [0, 1, 2, 4]
+
+  final List3 = [1, 2, 3];
+
+  // List3の要素を2倍にして追加
+  final List4 = [0, for (var i in List3) i * 2];
+
+  print(List4); // [0, 2, 4, 6]
+}
