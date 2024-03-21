@@ -73,3 +73,19 @@ void List2_4_6() {
     ..write('Firebase'); // sb2 = {StringBuffer: DartFlutterFirebase}
   print(sb2.toString()); // DartFlutterFirebase
 }
+
+// スプレッド演算子
+void List2_4_7() {
+  var list1 = [1, 2, 3];
+  var list2 = [4, 5, 6];
+
+  // スプレッド演算子を使わない場合
+  var list3 = List<int>.empty(growable: true);
+  list3.addAll(list1);
+  list3.addAll(list2);
+  print(list3); // [1, 2, 3, 4, 5, 6]
+
+  // スプレッド演算子を使う場合
+  var list4 = [...list1, ...list2];
+  print(list4); // [1, 2, 3, 4, 5, 6]
+}
