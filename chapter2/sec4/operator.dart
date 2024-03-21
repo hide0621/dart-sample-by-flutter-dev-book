@@ -60,16 +60,16 @@ void List2_4_5() {
 // カスケード記法
 void List2_4_6() {
   // カスケード記法を使わない場合
-  var sb = StringBuffer();
-  sb.write('Dart');
-  sb.write('Flutter');
-  sb.write('Firebase');
+  var sb = StringBuffer(); // sb = {StringBuffer}
+  sb.write('Dart'); // sb = {StringBuffer: Dart}
+  sb.write('Flutter'); // sb = {StringBuffer: DartFlutter}
+  sb.write('Firebase'); // sb = {StringBuffer: DartFlutterFirebase}
   print(sb.toString()); // DartFlutterFirebase
 
   // カスケード記法を使う場合
   var sb2 = StringBuffer()
     ..write('Dart')
-    ..write('Flutter')
-    ..write('Firebase');
+    ..write('Flutter') // 下の処理が実行されるまではsb2というオブジェクトは生成されず、値も持っていない
+    ..write('Firebase'); // sb2 = {StringBuffer: DartFlutterFirebase}
   print(sb2.toString()); // DartFlutterFirebase
 }
