@@ -74,3 +74,20 @@ void List2_5_4() {
       throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: white
   }
 }
+
+// switch文（continueとlabelを使ってfall-through）
+void List2_5_5() {
+  final color = 'red';
+  // final color = 'black';
+
+  switch (color) {
+    case 'red':
+      doSomethingIfRed(); // エラー文の後に「赤色です」が標準出力される
+      continue other; // otherラベルにジャンプ
+    case 'blue':
+      doSomethingIfBlue();
+    other: // otherラベル
+    case 'black':
+      throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: red
+  }
+}
