@@ -24,3 +24,34 @@ void List2_5_2() {
     print('No response received');
   }
 }
+
+void doSomethingIfRed() {
+  print('赤色です');
+}
+
+void doSomethingIfBlue() {
+  print('青色です');
+}
+
+void doSomethingIfGreenOrYellow() {
+  print('緑色または黄色です');
+}
+
+// switch文（break, fall-through, throw）
+void List2_5_3() {
+  final color = 'white';
+
+  switch (color) {
+    case 'red':
+      doSomethingIfRed();
+    case 'blue':
+      doSomethingIfBlue();
+    case 'black':
+      break; // switch文を抜ける
+    case 'green': // fall-throughという現象
+    case 'yellow':
+      print('緑色または黄色です'); // greenとyellowの場合は同じ処理を行う
+    default:
+      throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: white
+  }
+}
