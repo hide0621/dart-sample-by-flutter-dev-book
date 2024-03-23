@@ -55,3 +55,22 @@ void List2_5_3() {
       throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: white
   }
 }
+
+// 早期リターンに書き換え
+void List2_5_4() {
+  final color = 'red';
+
+  switch (color) {
+    case 'red':
+      return doSomethingIfRed();
+    case 'blue':
+      return doSomethingIfBlue();
+    case 'black':
+      break; // switch文を抜ける
+    case 'green': // fall-throughという現象
+    case 'yellow':
+      return print('緑色または黄色です'); // greenとyellowの場合は同じ処理を行う
+    default:
+      throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: white
+  }
+}
