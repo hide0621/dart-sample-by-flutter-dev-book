@@ -91,3 +91,26 @@ void List2_5_5() {
       throw 'Unexpected color: $color'; // Unhandled exception: Unexpected color: red
   }
 }
+
+// switch-when文
+void List2_5_6() {
+  final int? statusCode = null;
+
+  // 以下のcase式の中ではstatusCodeがnullか否かも判定している
+  switch (statusCode) {
+    case (int statusCode) when 100 <= statusCode && statusCode < 200:
+      print('Informational');
+    case (int statusCode) when 200 <= statusCode && statusCode < 300:
+      print('Successful');
+    case (int statusCode) when 300 <= statusCode && statusCode < 400:
+      print('Redirection');
+    case (int statusCode) when 400 <= statusCode && statusCode < 500:
+      print('Client Error');
+    case (int statusCode) when 500 <= statusCode && statusCode < 600:
+      print('Server Error');
+    case (null):
+      print('No response received');
+    default:
+      throw 'Unexpected status code: $statusCode';
+  }
+}
