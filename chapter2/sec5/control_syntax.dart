@@ -167,3 +167,13 @@ void List2_5_10() {
     print('Key: ${entry.key}, Value: ${entry.value}');
   }
 }
+
+// for-each文
+void List2_5_11() {
+  final colors = ['red', 'green', 'blue'];
+
+  // リスト、セット、マップはIterableを実装（Wrap）しているため、forEachメソッドを使用できる
+  colors.forEach((color) {
+    print(color);
+  });
+}
