@@ -114,3 +114,18 @@ void List2_5_6() {
       throw 'Unexpected status code: $statusCode';
   }
 }
+
+// switchを式として扱う
+void List2_5_7() {
+  final statusCode = 404;
+
+  final message = switch (statusCode) {
+    >= 100 && < 200 => 'Informational',
+    >= 200 && < 300 => 'Successful',
+    >= 300 && < 400 => 'Redirection',
+    >= 400 && < 500 => 'Client Error',
+    >= 500 && < 600 => 'Server Error',
+    _ => 'Unknown status code: $statusCode',
+  };
+  print(message);
+}
