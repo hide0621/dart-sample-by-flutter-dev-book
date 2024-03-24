@@ -77,3 +77,21 @@ void List2_1_6() {
   // ここで初期化される
   print(variable);
 }
+
+/*
+const, static, そして final は、Dart言語における変数宣言の修飾子で、それぞれ異なる特性を持っています。
+
+final: finalキーワードは、一度だけ値を設定できる変数を宣言します。一度値が設定されると、その後は変更することはできません。final変数の値は、実行時に計算されます。つまり、final変数は実行時定数です。
+const: constキーワードは、コンパイル時にその値が確定する定数を宣言します。const変数の値は、コンパイル時に計算され、その後は変更することはできません。つまり、const変数はコンパイル時定数です。
+static: staticキーワードは、クラスレベルの変数（つまり、インスタンスではなくクラス自体に関連付けられた変数）を宣言します。static変数は、そのクラスのすべてのインスタンスで共有されます。
+*/
+
+class MyClass {
+  final int aFinal = DateTime.now().year; // 実行時に値が確定
+  static const int aConst = 2023; // コンパイル時に値が確定
+  static int aStatic = 0; // クラスレベルの変数
+}
+
+void List2_1_7() {
+  MyClass();
+}
