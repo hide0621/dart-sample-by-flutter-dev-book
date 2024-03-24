@@ -17,3 +17,18 @@ void List2_6_9() {
   } = {200: 'OK', 404: 'Not Found', 500: 'Internal Server Error'};
   print('200: $successful, 404: $notFound'); // 200: OK, 404: Not Found
 }
+
+// Recordの場合（名前付きフィールド）
+// 位置フィールドの場合はList2_6_2を参照
+// 分解宣言をさせるためには、フィールド名が全て一致している必要がある
+void List2_6_10() {
+  final record = (name: 'Alice', age: 20);
+
+  // このようにフィールド名と完全一致させる必要がある
+  final (name: n, age: a) = record;
+  print('name is $n, age is $a'); // name is Alice, age is 20
+
+  // 以下はエラーになる
+  // final {name, age} = record;
+  // print('name is $name, age is $age');
+}
