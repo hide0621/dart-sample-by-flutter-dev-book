@@ -145,12 +145,25 @@ void List2_5_8() {
 }
 
 // Iterableの要素を反復処理する
-// Iterableは、リスト、セットのスーパークラス
+// Iterableは、リスト、セット、マップのスーパークラス
 // for-in文
 void List2_5_9() {
   final colors = ['red', 'green', 'blue'];
 
   for (final color in colors) {
     print(color);
+  }
+}
+
+// for-in文（Map）
+void List2_5_10() {
+  final numbers = {
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+  };
+
+  for (final entry in numbers.entries) {
+    print('Key: ${entry.key}, Value: ${entry.value}');
   }
 }
