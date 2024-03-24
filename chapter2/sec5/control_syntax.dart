@@ -143,3 +143,14 @@ void List2_5_8() {
     print(i);
   }
 }
+
+// Iterableの要素を反復処理する
+// Iterableは、リスト、セットのスーパークラス
+// for-in文
+void List2_5_9() {
+  final colors = ['red', 'green', 'blue'];
+
+  for (final color in colors) {
+    print(color);
+  }
+}
