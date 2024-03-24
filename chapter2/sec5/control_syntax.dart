@@ -177,3 +177,22 @@ void List2_5_11() {
     print(color);
   });
 }
+
+// while文(リーダブルコードの見解では、こちらの方が良いとされている)
+void List2_5_12() {
+  var i = 0;
+  while (i < 5) {
+    print(i); // 0, 1, 2, 3, 4
+    i++;
+  }
+}
+
+// do-while文
+// ただし、do-while文は、条件式がfalseであっても、最初の1回は必ず実行される
+void List2_5_13() {
+  var i = 6;
+  do {
+    print(i); // 6
+    i++;
+  } while (i < 5);
+}
