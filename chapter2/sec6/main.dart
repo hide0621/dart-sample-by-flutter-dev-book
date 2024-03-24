@@ -1,3 +1,6 @@
+import 'pattern.dart';
+
 void main() {
-  print('Hello, World!');
+  List2_6_1();
+  List2_6_2();
 }
