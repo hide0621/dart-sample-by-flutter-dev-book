@@ -32,3 +32,10 @@ void List2_6_10() {
   // final {name, age} = record;
   // print('name is $name, age is $age');
 }
+
+// Recordの場合（名前付きフィールドで、フィールド名を変数名で推論させる記法）
+void List2_6_11() {
+  final record = (name: 'Alice', age: 20);
+  final (:name, :age) = record; // フィールド名を変数名で推論させる
+  print('name is $name, age is $age'); // name is Alice, age is 20
+}
