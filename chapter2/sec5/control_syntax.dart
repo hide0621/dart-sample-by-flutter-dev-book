@@ -196,3 +196,16 @@ void List2_5_13() {
     i++;
   } while (i < 5);
 }
+
+// breakとcontinue
+void List2_5_14() {
+  for (var i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+      continue; // 偶数の場合は、次のループに進む（2なら、3に進むなど）
+    }
+    if (i > 6) {
+      break; // 7以上の場合は、ループを抜ける
+    }
+    print('index: $i');
+  }
+}
