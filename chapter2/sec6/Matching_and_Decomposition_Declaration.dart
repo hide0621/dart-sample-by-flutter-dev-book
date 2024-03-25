@@ -39,3 +39,16 @@ void List2_6_11() {
   final (:name, :age) = record; // フィールド名を変数名で推論させる
   print('name is $name, age is $age'); // name is Alice, age is 20
 }
+
+class SomeClass {
+  const SomeClass(this.x);
+  final int x;
+}
+
+// クラスの場合（ゲッター（フィールド）を分解宣言）
+void List2_6_12() {
+  final someInstance = SomeClass(123);
+  print('x = ${someInstance.x}'); // x = 123
+  final SomeClass(x: number) = someInstance; // ゲッター（フィールド）を分解宣言
+  print('x = $number'); // x = 123
+}
