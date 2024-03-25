@@ -52,3 +52,10 @@ void List2_6_12() {
   final SomeClass(x: number) = someInstance; // ゲッター（フィールド）を分解宣言
   print('x = $number'); // x = 123
 }
+
+// クラスの場合（ゲッターを変数名で推論させる記法）
+void List2_6_13() {
+  final someInstance = SomeClass(123);
+  final SomeClass(:x) = someInstance; // ゲッターを変数名で推論させる
+  print('x = $x'); // x = 123
+}
