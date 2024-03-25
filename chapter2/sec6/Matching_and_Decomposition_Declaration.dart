@@ -59,3 +59,18 @@ void List2_6_13() {
   final SomeClass(:x) = someInstance; // ゲッターを変数名で推論させる
   print('x = $x'); // x = 123
 }
+
+// クラスの場合（クラスとのマッチング）
+// オブジェクト全体と一致させる必要はない（フィールドの値がどうとかは関係なく、そのオブジェクトがどの型に紐づいているかで判定するってこと？）
+void List2_6_14() {
+  // final variable = 'hoge';
+  final variable = SomeClass(123);
+  final SomeClass(x: number) = variable; // 分解宣言も並記できる
+  print('x = $number');
+  switch (variable) {
+    case SomeClass():
+      print('SomeClass');
+    case String():
+      print('String');
+  }
+}
