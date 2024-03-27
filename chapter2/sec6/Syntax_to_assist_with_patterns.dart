@@ -15,7 +15,7 @@ void List2_6_16() {
   // int? code = 10;
   int? code = null;
   switch (code) {
-    case final i? when i >= 0:
+    case final i? when i >= 0: // codeをiに分解宣言してマッチングさせている
       print('code is positive');
     default:
       print('code is null or negative');
