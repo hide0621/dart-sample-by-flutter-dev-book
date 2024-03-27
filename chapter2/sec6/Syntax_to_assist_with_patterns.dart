@@ -9,3 +9,15 @@ void List2_6_15() {
 
   print('number: $number, str: $str'); // number: 0, str: zero
 }
+
+// nullチェック
+void List2_6_16() {
+  // int? code = 10;
+  int? code = null;
+  switch (code) {
+    case final i? when i >= 0:
+      print('code is positive');
+    default:
+      print('code is null or negative');
+  }
+}
