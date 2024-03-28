@@ -21,3 +21,18 @@ void List2_6_16() {
       print('code is null or negative');
   }
 }
+
+// nullアサーション
+void List2_6_17() {
+  int? code = 10;
+  // int? code = null;
+  switch (code) {
+    // 分解宣言の変数iに関しては、「The null-assert pattern will have no effect because the matched type isn't nullable. Try replacing the null-assert pattern with its nested pattern.」という警告が出る
+    // これは変数i自体はnull許容型でないためである
+    case final i! when i >= 0: // codeをiに分解宣言してマッチングさせている
+      print(
+          'code is positive'); // 値がnullの場合、このコードは実行されない Unhandled exception: Null check operator used on a null value
+    default:
+      print('code is negative');
+  }
+}
