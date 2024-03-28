@@ -36,3 +36,10 @@ void List2_6_17() {
       print('code is negative');
   }
 }
+
+// ワイルドカード 例１
+void List2_6_18() {
+  final record = ('cake', 100);
+  final (name, _) = record; // ２番目の位置フィールド(要素)を無視する
+  print('name: $name'); // name: cake
+}
