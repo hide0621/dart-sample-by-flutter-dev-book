@@ -51,3 +51,12 @@ void List2_7_3() {
         'stack trace: $st'); // stack trace: #0      doSomething (file:///Users/~/例外発生場所のパス)
   }
 }
+
+// 補足する型を指定しつつ例外オブジェクトを取得する場合は、onキーワードとcatchブロックの引数を組み合わせる
+void List2_7_4() {
+  try {
+    doSomething();
+  } on MyException catch (e) {
+    print('catch : $e'); // catch : Instance of 'MyException'
+  }
+}
