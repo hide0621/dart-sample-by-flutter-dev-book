@@ -60,3 +60,13 @@ void List2_7_4() {
     print('catch : $e'); // catch : Instance of 'MyException'
   }
 }
+
+// 例外の再スロー
+void List2_7_5() {
+  try {
+    doSomething();
+  } on MyException catch (e) {
+    print('catch : $e');
+    rethrow; // 例外を再スローする
+  }
+}
