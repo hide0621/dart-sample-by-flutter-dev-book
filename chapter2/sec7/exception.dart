@@ -35,6 +35,19 @@ void List2_7_2() {
   try {
     doSomething();
   } on MyException {
-    print('catch MyException');
+    print('catch MyException'); // catch MyException
+  }
+}
+
+// 例外オブジェクトを取得する場合はcatchブロックの引数に指定する
+// catchの第一引数は例外オブジェクト、第二引数はスタックトレース
+// スタックトレースには、エラーが発生したメソッドや行番号、それに至るまでのメソッド呼び出しの連鎖（呼び出し元のメソッド、その呼び出し元のメソッド、と遡る）が記録されています。
+void List2_7_3() {
+  try {
+    doSomething();
+  } catch (e, st) {
+    print('catch $e'); // catch Instance of 'MyException'
+    print(
+        'stack trace: $st'); // stack trace: #0      doSomething (file:///Users/~/例外発生場所のパス)
   }
 }
