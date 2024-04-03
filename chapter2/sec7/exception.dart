@@ -2,6 +2,14 @@ void doSomething() {
   throw MyException('エラーが発生しました'); // 例外をスローする
 }
 
+void doSomething2() {
+  print('doSomething2');
+}
+
+void doClean() {
+  print('clean up');
+}
+
 // MyExceptionがtoStringメソッドをオーバライドしていない場合
 class MyException {
   MyException(this.message);
@@ -68,5 +76,40 @@ void List2_7_5() {
   } on MyException catch (e) {
     print('catch : $e');
     rethrow; // 例外を再スローする
+  }
+}
+
+// finallyブロック
+void List2_7_6() {
+  try {
+    doSomething();
+  } on MyException catch (e) {
+    print('catch : $e'); // catch : Instance of 'MyException'
+  } finally {
+    doClean(); // clean up
+  }
+}
+
+// finallyブロックを導入して例外がスローされない場合
+void List2_7_7() {
+  try {
+    doSomething2(); // 例外がスローされない doSomething2を出力
+  } on MyException catch (e) {
+    print('catch : $e');
+  } finally {
+    doClean(); // clean up
+  }
+}
+
+// 例外に一致するcatchブロックがない場合
+// finallyが実行された後に、例外が呼び出し元に伝播される
+void List2_7_8() {
+  try {
+    doSomething();
+  } on FormatException catch (e) {
+    // Unhandled exception: Instance of 'MyException'
+    print('catch : $e');
+  } finally {
+    doClean(); // clean up
   }
 }
