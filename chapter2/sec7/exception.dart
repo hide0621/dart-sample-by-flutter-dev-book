@@ -10,6 +10,15 @@ void doClean() {
   print('clean up');
 }
 
+// アサーションの検証用関数
+int? nonNullableObject() {
+  int? x = null;
+  int? y = x;
+  // int x = 10;
+  // int? y = x;
+  return y;
+}
+
 // MyExceptionがtoStringメソッドをオーバライドしていない場合
 class MyException {
   MyException(this.message);
@@ -112,4 +121,15 @@ void List2_7_8() {
   } finally {
     doClean(); // clean up
   }
+}
+
+// アサーションの例
+void List2_7_9() {
+  final valuable = nonNullableObject();
+
+  assert(valuable !=
+      null); // オブジェクトがnullでないことをチェック。アサーションに失敗した際はUnhandled exception:が出力される
+
+  // assert(valuable != null,
+  //     'valuables should not be null'); // アサーションが失敗した際は、このようにメッセージを付与することもできる
 }
