@@ -133,3 +133,31 @@ void List2_7_9() {
   // assert(valuable != null,
   //     'valuables should not be null'); // アサーションが失敗した際は、このようにメッセージを付与することもできる
 }
+
+// 上記アサーションはDartでの場合だが、Flutterではアサーションはdebugビルドでのみ有効で、リリースビルドでは無効になる
+// これを利用して、debugビルドでのみ実行されるコードを書くことができる
+void List2_7_10() {
+  assert(() {
+    // debugビルドでのみ実行されるコード
+    print('debug only code');
+    return true;
+    // 以下の()は無名関数の実行を表し、無名関数に引数を渡すこともできる！
+  }());
+}
+
+// 無名関数に引数を渡す例
+void List2_7_11() {
+  assert((String message) {
+    print('debug only code: $message');
+    return true;
+  }('Hello, world!'));
+}
+
+// 上記はこのように書き換え可能
+void List2_7_12() {
+  var message = 'Hello, world!';
+  assert((String message) {
+    print('debug only code: $message');
+    return true;
+  }(message));
+}
