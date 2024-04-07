@@ -161,3 +161,36 @@ void List2_7_12() {
     return true;
   }(message));
 }
+
+// Flutterの例外処理
+// Flutterアプリケーションでは、例外が発生すると、Flutterフレームワークが例外をキャッチして、エラー画面を表示する
+// このエラー画面には、例外のスタックトレースや、エラーが発生した場所が表示される
+// また、Flutterアプリケーションでは、エラー画面をカスタマイズすることもできる
+// 例外が発生した場合にカスタムエラーページを表示するには、MaterialAppのbuilderプロパティを使用する
+
+// void List2_7_13() {
+//   runApp(
+//     MaterialApp(
+//       builder: (context, child) {
+//         return ErrorWidget(
+//           FlutterError('Custom error message'),
+//         );
+//       },
+//       home: Scaffold(
+//         body: Center(
+//           child: Text('Hello, world!'),
+//         ),
+//       ),
+//     ),
+//   );
+// }
+
+// 例外が発生した場合にカスタムエラーページを表示するには、MaterialAppのbuilderプロパティを使用する
+// 。FlutterError.onErrorはFlutterで発生したエラーをハンドルするためのコールバック関数
+// このコールバック関数にエラーが発生した際の処理を記述することで、エラー画面をカスタマイズできる
+// void List2_7_13() {
+//   FlutterError.onError = (details) {
+//     print('Caught error: $details');
+//   };
+//   runApp(const MyApp());
+// }
