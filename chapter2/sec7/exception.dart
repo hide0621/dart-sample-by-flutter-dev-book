@@ -199,3 +199,13 @@ void List2_7_12() {
 //   };
 //   runApp(const MyApp());
 // }
+
+// 上記以外で発生したエラー（ボタンのタップイベントハンドラなど）をキャッチするには、PlatformDispatcherでハンドリングする
+
+// void List2_7_14() {
+//   PlatformDispatcher.instance.onError = (error, stackTrace) {
+//     print('Caught error: $error');
+//     return true; // 例外を処理した際はtrueを返す
+//   };
+//   runApp(const MyApp());
+// }
