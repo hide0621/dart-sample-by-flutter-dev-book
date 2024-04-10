@@ -21,3 +21,15 @@ void List2_9_2() {
   print(str2
       ?.length); // 5 // Warning: Operand of null-aware operation '?.' has type 'String' which excludes null.
 }
+
+// nullアサーション演算子
+void List2_9_3() {
+  String? str;
+  // print(str!
+  //     .length); // Unhandled exception: Null check operator used on a null value
+
+  String? str2;
+  str2 = 'Hello';
+  print(str2!
+      .length); // 5 // Warning: Operand of null-aware operation '!' has type 'String' which excludes null.
+}
