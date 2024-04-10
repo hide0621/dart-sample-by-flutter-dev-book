@@ -10,3 +10,14 @@ void List2_9_1() {
   nullableNumber = null; // OK
   print(nullableNumber); // null
 }
+
+// null認識演算子
+void List2_9_2() {
+  String? str;
+  print(str?.length); // null
+
+  String? str2;
+  str2 = 'Hello';
+  print(str2
+      ?.length); // 5 // Warning: Operand of null-aware operation '?.' has type 'String' which excludes null.
+}
