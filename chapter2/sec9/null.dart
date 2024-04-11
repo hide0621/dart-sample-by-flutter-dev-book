@@ -59,3 +59,19 @@ void List2_9_5() {
   str2 = 'Hello';
   print(str2 ?? 'nullです'); // Hello
 }
+
+// ??=演算子（null許容代入演算子）
+// 左辺の値がnullである場合に右辺の値を代入する
+// 左辺の値がnullでない場合は、左辺の値自体が変更されない
+void List2_9_6() {
+  String? str;
+  print(str); // null
+  str ??= 'Hello'; // strがnullなので'Hello'が代入される
+  print(str); // Hello
+
+  String? str2;
+  str2 = 'World';
+  print(str2); // World
+  str2 ??= 'Hello'; // str2がnullでないので何も変更されない
+  print(str2); // World
+}
