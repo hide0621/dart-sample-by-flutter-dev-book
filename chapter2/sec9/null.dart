@@ -47,3 +47,15 @@ void List2_9_4() {
   // その後のコードではstrをnullでないString型として扱う（タイププロモーション）
   print(str.length);
 }
+
+// ??演算子（null合体演算子）
+// 左辺の値がnullである場合に右辺の値を返す
+// 左辺の値がnullでない場合は、左辺の値自体が返される
+void List2_9_5() {
+  String? str;
+  print(str ?? 'nullです'); // nullです
+
+  String? str2;
+  str2 = 'Hello';
+  print(str2 ?? 'nullです'); // Hello
+}
