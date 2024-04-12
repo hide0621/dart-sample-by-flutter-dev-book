@@ -16,5 +16,8 @@ import 'Libraries_and_Visibility.dart';
 /// これはpackage:スキームを使用して行われ、pubspec.yamlファイルにパッケージの依存関係を追加することで実現する
 
 void main() {
-  List2_10_1();
+  // List2_10_1();
+  // publicFunction(); // publicな関数なので呼び出し可能
+  // _internalFunction(); // privateな関数なのでエラーになる
+  List2_10_2();
 }

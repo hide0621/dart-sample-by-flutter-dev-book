@@ -15,3 +15,21 @@ void List2_10_1() {
   double area = math.pi * math.pow(radius, 2);
   print('The area of the circle is: $area');
 }
+
+// ライブラリの可視性
+// Dartのライブラリは、デフォルトでpublicになっている（publicやprivateといったキーワードはない）
+// _（アンダーバー）を変数、クラス、関数の前に付けることでprivateとして扱われ、外部からアクセルができなくなる
+// 以下の例では、_internalFunction()はライブラリ内でのみ使用可能で、外部からはアクセスできない
+
+void _internalFunction() {
+  print('This is a private function');
+}
+
+void publicFunction() {
+  print('This is a public function');
+}
+
+// publicな関数を通すことでprivateな関数を呼び出すことができる
+void List2_10_2() {
+  _internalFunction();
+}
