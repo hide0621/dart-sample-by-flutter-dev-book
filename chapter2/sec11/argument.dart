@@ -36,3 +36,20 @@ void List2_11_3() {
   // 呼び出し時に引数の名前を指定する
   makeColor(red: 0xFF, green: 0x00, blue: 0x33); // red: 255, green: 0, blue: 51
 }
+
+// 名前付き引数はデフォルトでは省略可能として扱われる
+// 必須にする場合はrequiredキーワードを付ける
+// また、デフォルト値を与えることもできる
+void List2_11_4() {
+  void makeColor(
+      {int? red, required int green, required int blue, int alpha = 0xFF}) {
+    print('red: $red, green: $green, blue: $blue, alpha: $alpha');
+  }
+
+  makeColor(
+      green: 0x30, blue: 0xBF); // red: null, green: 48, blue: 191, alpha: 255
+
+  // 引数の順番を変えて呼び出すこともできる
+  makeColor(
+      blue: 0xBF, green: 0x30); // red: null, green: 48, blue: 191, alpha: 255
+}
