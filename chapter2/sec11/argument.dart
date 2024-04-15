@@ -53,3 +53,19 @@ void List2_11_4() {
   makeColor(
       blue: 0xBF, green: 0x30); // red: null, green: 48, blue: 191, alpha: 255
 }
+
+// なお、名前付き引数は引数リストの末尾に置く必要があるが、
+// 呼び出し時は位置引数を後方においても問題ない
+List2_11_5() {
+  void makeColor(String colorName,
+      {required int red, required int green, required int blue}) {
+    print('$colorName: red: $red, green: $green, blue: $blue');
+  }
+
+  // 呼び出し時は名前付き引数が銭湯でも可
+  makeColor(
+      red: 0x78,
+      green: 0x30,
+      blue: 0xBF,
+      'purple'); // purple: red: 120, green: 48, blue: 191
+}
