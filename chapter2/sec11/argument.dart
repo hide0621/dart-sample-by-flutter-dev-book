@@ -1,4 +1,7 @@
 // 省略可能引数
+
+// なお、省略可能引数は引数リストの末尾に置く必要がある
+
 void List2_11_1() {
   void makeColor(int red, int green, int blue, [int? alpha]) {
     print('red: $red, green: $green, blue: $blue, alpha: $alpha');
