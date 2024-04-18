@@ -28,3 +28,20 @@ void List2_11_8() {
 
   print(result); // 20
 }
+
+// クロージャーの例
+void List2_11_9() {
+  // 以下の関数は引数をキャプチャしたクロージャーを生成している
+  Function multiple(int i) {
+    // 以下は匿名関数とアロー関数を組み合わせた表現
+    return (x) => x * i;
+  }
+
+  final f1 = multiple(3);
+  final f2 = multiple(7);
+
+  print(f1(2));
+  // 6
+  print(f2(6));
+  // 42
+}
