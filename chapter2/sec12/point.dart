@@ -23,3 +23,17 @@ void List2_12_1() {
   print('point1: (${point1.x}, ${point1.y})');
   print('point2: (${point2.x}, ${point2.y})');
 }
+
+/// thisキーワードを使った記述例
+class Point3 {
+  Point3(this.x, this.y);
+
+  int x;
+  int y;
+}
+
+void List2_12_2() {
+  final point3 = Point3(30, 40);
+
+  print('point3: (${point3.x}, ${point3.y})');
+}
