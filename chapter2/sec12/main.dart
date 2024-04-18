@@ -1,3 +1,5 @@
+import 'point.dart';
+
 void main() {
-  print('Hello, Dart!');
+  List2_12_1();
 }
