@@ -60,3 +60,22 @@ void List2_12_2() {
 
   print('point3: (${point3.x}, ${point3.y})');
 }
+
+/// 初期化リストでパラメータのアサーションを記述することもできる
+class Point4 {
+  Point4(this.x, this.y)
+      : assert(x >= 0),
+        assert(y >= 0);
+
+  int x;
+  int y;
+}
+
+void List2_12_3() {
+  final point4 = Point4(50, 60);
+
+  // final point4 = Point4(-1,
+  //     -1); // Unhandled exception: Failed assertion: line 67 pos 16: 'x >= 0': is not true.
+
+  print('point4: (${point4.x}, ${point4.y})');
+}
