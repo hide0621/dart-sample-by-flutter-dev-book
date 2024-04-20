@@ -32,7 +32,7 @@ class User2 {
   final int id;
   String _password;
 
-  /// 外部からはこのゲッターを開始て呼び出す
+  /// 外部からはこのゲッターを介して呼び出す
   // カスタムゲッター（getキーワード）
   // パスワードを伏せ字にして返す
   String get password => '****';
