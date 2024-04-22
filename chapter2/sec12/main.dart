@@ -1,5 +1,6 @@
 // import 'Getter-and-Setter.dart';
-import 'constant-constructor.dart';
+// import 'constant-constructor.dart';
+import 'named-constructor.dart';
 // import 'Orthodox-class-pattern.dart';
 
 void main() {
@@ -15,5 +16,7 @@ void main() {
   // final user = User(1, 'password');
   // print(user._password);
 
-  List2_12_6();
+  // List2_12_6();
+
+  List2_12_7();
 }
