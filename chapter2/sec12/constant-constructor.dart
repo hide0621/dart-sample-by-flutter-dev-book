@@ -20,9 +20,15 @@ void List2_12_6() {
   // print(point.y);
   // point.x = 3; // Error: The setter 'x' isn't defined for the class 'Point'.
 
-  final point1 = const Point(1, 2); // constantコンストラクタの前にconstキーワードを付与
-  const point2 = Point(1, 2); // constキーワードを付与した変数に代入
-  final point3 = Point(1, 2); // そのどちらでもない
+  /// constantコンストラクタの前にconstキーワードを付与
+  final point1 = const Point(1, 2);
+
+  /// constキーワードを付与した変数に代入
+  const point2 = Point(1, 2);
+
+  /// そのどちらでもない
+  final point3 = Point(1, 2);
+
   print('${point1 == point2}'); // true
   print('${point1 == point3}'); // false
 }
