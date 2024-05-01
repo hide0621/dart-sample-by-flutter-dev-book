@@ -1,8 +1,10 @@
 // import 'Getter-and-Setter.dart';
 // import 'constant-constructor.dart';
-import 'factory-constructor.dart';
+// import 'factory-constructor.dart';
 // import 'named-constructor.dart';
 // import 'Orthodox-class-pattern.dart';
+
+import 'class-inheritance.dart';
 
 void main() {
   // List2_12_1();
@@ -22,5 +24,7 @@ void main() {
   // List2_12_7();
   // List2_12_8();
 
-  List2_12_9();
+  // List2_12_9();
+
+  List2_12_10();
 }
