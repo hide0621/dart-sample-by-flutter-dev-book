@@ -23,3 +23,18 @@ void List2_12_11() {
   final dog = Dog2();
   print(dog.sayHello()); // Hello
 }
+
+/// @overrideアノテーションを使ってオーバーライドを明示するパターン
+class Animal3 {
+  String greet() => 'Hello';
+}
+
+class Dog3 extends Animal3 {
+  @override
+  String greet() => 'Bow-Bow';
+}
+
+void List2_12_12() {
+  final dog = Dog3();
+  print(dog.greet()); // Bow-Bow
+}
