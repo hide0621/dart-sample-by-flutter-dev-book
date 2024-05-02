@@ -112,6 +112,7 @@ class Dog6 extends Animal6 {
 
 /// パターン2
 class Dog66 extends Animal6 {
+  /// サブクラスのコンストラクタの中でスーパークラスのフィールドを参照し、それをサブクラスのコンストラク引数にするパターン
   Dog66(super.name);
 }
 
