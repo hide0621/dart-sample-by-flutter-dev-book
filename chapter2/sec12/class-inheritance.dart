@@ -60,6 +60,7 @@ class Dog4 extends Animal4 {
   /// 引数をスーパークラス化（抽象化、階層をあげてあげる）させることで、スーパークラスのメソッドの引数も受け取れる
   /// ある種、ダックタイピングに近いことをさせてあげられるようにしている
   /// → Go言語のインターフェースとその実装・呼び出しのような感じ
+  /// → Dartでは全てのクラスは暗黙的にインターフェースが定義されていることと関係がある？
   @override
   void eat(Food food) {
     print('Dog eats $food');
@@ -95,4 +96,29 @@ class Dog5 extends Animal5 {
 void List2_12_14() {
   final dog = Dog5();
   print(dog.eat()); // Dog eats
+}
+
+/// superキーワードを使ってスーパークラスのコンストラクタを呼び出すパターン
+class Animal6 {
+  Animal6(this.name);
+  final String name;
+}
+
+/// パターン1
+class Dog6 extends Animal6 {
+  /// サブクラスのコンストラクタ引数をスーパークラスのコンストラクタに渡すパターン
+  Dog6(String name) : super(name);
+}
+
+/// パターン2
+class Dog66 extends Animal6 {
+  Dog66(super.name);
+}
+
+void List2_12_15() {
+  final dog = Dog6('Pochi');
+  print(dog.name); // Pochi
+
+  final dog2 = Dog66('Taro');
+  print(dog2.name); // Taro
 }
