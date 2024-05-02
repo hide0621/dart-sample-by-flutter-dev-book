@@ -59,6 +59,7 @@ class Animal4 {
 class Dog4 extends Animal4 {
   /// 引数をスーパークラス化（抽象化、階層をあげてあげる）させることで、スーパークラスのメソッドの引数も受け取れる
   /// ある種、ダックタイピングに近いことをさせてあげられるようにしている
+  /// → Go言語のインターフェースとその実装・呼び出しのような感じ
   @override
   void eat(Food food) {
     print('Dog eats $food');
