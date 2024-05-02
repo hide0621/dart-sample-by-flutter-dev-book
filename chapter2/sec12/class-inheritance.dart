@@ -48,3 +48,31 @@ void List2_12_12() {
 /// 引数の数が同じ
 ///
 /// 条件２：ジェネリックメソッドを非ジェネリックメソッドでオーバーライドできない、逆も同様
+
+/// 引数の型が同じ、またはそのスーパークラスになっているパターン
+class Animal4 {
+  void eat(Meat food) {
+    print('Animal eats $food');
+  }
+}
+
+class Dog4 extends Animal4 {
+  /// 引数をスーパークラス化（抽象化）させることで、スーパークラスのメソッドの引数も受け取れる
+  /// ある種、ダックタイピングに近い
+  @override
+  void eat(Food food) {
+    print('Dog eats $food');
+  }
+}
+
+class Food {}
+
+class Meat extends Food {}
+
+void List2_12_13() {
+  final dog = Dog4();
+
+  /// 引数をスーパークラス化（抽象化）させることで、スーパークラスのメソッドの引数も受け取れる（ある種、ダックタイピングに近い）
+  dog.eat(Meat());
+  dog.eat(Food());
+}
