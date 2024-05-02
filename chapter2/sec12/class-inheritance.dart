@@ -77,3 +77,22 @@ void List2_12_13() {
   dog.eat(Meat());
   dog.eat(Food());
 }
+
+/// 戻り値がnull許容型のメソッドを非null許容型のメソッドにオーバーライドするパターン
+class Animal5 {
+  String? eat() {
+    return null;
+  }
+}
+
+class Dog5 extends Animal5 {
+  @override
+  String eat() {
+    return 'Dog eats';
+  }
+}
+
+void List2_12_14() {
+  final dog = Dog5();
+  print(dog.eat()); // Dog eats
+}
