@@ -4,7 +4,8 @@
 // import 'named-constructor.dart';
 // import 'Orthodox-class-pattern.dart';
 
-import 'class-inheritance.dart';
+// import 'class-inheritance.dart';
+import 'implicit-interface.dart';
 
 void main() {
   // List2_12_1();
@@ -34,5 +35,7 @@ void main() {
 
   // List2_12_14();
 
-  List2_12_15();
+  // List2_12_15();
+
+  List2_12_16();
 }
