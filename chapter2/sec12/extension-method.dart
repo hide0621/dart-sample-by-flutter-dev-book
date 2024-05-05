@@ -79,3 +79,18 @@ void List2_12_19() {
   // 拡張メソッド以外からは呼び出せない
   // List.noNeedToSwap(list); // The method 'noNeedToSwap' isn't defined for the class 'List'.
 }
+
+/// 拡張名のない拡張メソッドは定義されたファイル内でのみ使用可能
+extension on List {
+  void swap(int index1, int index2) {
+    final tmp = this[index1];
+    this[index1] = this[index2];
+    this[index2] = tmp;
+  }
+}
+
+void List2_12_20() {
+  final list = [1, 2, 3];
+  list.swap(0, 2);
+  print(list); // [3, 2, 1]
+}
