@@ -5,7 +5,8 @@
 // import 'Orthodox-class-pattern.dart';
 
 // import 'class-inheritance.dart';
-import 'extension-method.dart';
+// import 'extension-method.dart';
+import 'mixin.dart';
 // import 'implicit-interface.dart';
 
 void main() {
@@ -44,9 +45,11 @@ void main() {
   // List2_12_18();
   // List2_12_19();
 
-  // 拡張メソッドを定義したファイル外から呼び出すには以下のように書く
-  final list = [1, 2, 3];
-  list.swap(0, 2);
+  // // 拡張メソッドを定義したファイル外から呼び出すには以下のように書く
+  // final list = [1, 2, 3];
+  // list.swap(0, 2);
+  //
+  // List2_12_20();
 
-  List2_12_20();
+  List2_12_21();
 }
