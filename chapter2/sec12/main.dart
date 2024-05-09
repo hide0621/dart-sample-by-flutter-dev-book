@@ -6,7 +6,8 @@
 
 // import 'class-inheritance.dart';
 // import 'extension-method.dart';
-import 'mixin.dart';
+import 'enum.dart';
+// import 'mixin.dart';
 // import 'implicit-interface.dart';
 
 void main() {
@@ -52,5 +53,7 @@ void main() {
   // List2_12_20();
 
   // List2_12_21();
-  List2_12_22();
+  // List2_12_22();
+
+  List2_12_23();
 }
