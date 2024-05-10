@@ -32,7 +32,7 @@ void List2_12_23() {
 /// ・静的なフィールドを定義して、プライベートなコンストラクタの結果を受けるように定義（オブジェクトになる）
 /// ・ファクトリメソッドを定義して、enumを模したオブジェクトを作成する
 /// という方法で実装する
-// enum Shape2 {
+// enum Shape1 {
 //   circle(corner : 0),
 //   triangle(corner : 3),
 //   square(corner : 4),
@@ -46,9 +46,9 @@ void List2_12_23() {
 //   }
 // }
 //
-// void List2_12_24() {
+// void List2_12_244() {
 //
-//   final ellipse = Shape2.ellipse();
+//   final ellipse = Shape1.ellipse();
 //   print(ellipse.corner);
 // }
 
