@@ -71,3 +71,38 @@ void List2_12_24() {
   final ellipse = Shape2.ellipse();
   print(ellipse.corner); // Prints: 0
 }
+
+/// ただしどう言う訳か、この書き方なら先述の出来ないとされていた高度なEnumも表現できる...
+/// [参照] https://dart.dev/language/enums#declaring-enhanced-enums
+enum Vehicle implements Comparable<Vehicle> {
+  car(tires: 4, passengers: 5, carbonPerKilometer: 400),
+  bus(tires: 6, passengers: 50, carbonPerKilometer: 800),
+  bicycle(tires: 2, passengers: 1, carbonPerKilometer: 0);
+
+  const Vehicle({
+    required this.tires,
+    required this.passengers,
+    required this.carbonPerKilometer,
+  });
+
+  final int tires;
+  final int passengers;
+  final int carbonPerKilometer;
+
+  int get carbonFootprint => (carbonPerKilometer / passengers).round();
+
+  bool get isTwoWheeled => this == Vehicle.bicycle;
+
+  // factoryコンストラクタも書いてみた
+  factory Vehicle.truck({required int passengers}) {
+    return Vehicle.car;
+  }
+
+  @override
+  int compareTo(Vehicle other) => carbonFootprint - other.carbonFootprint;
+}
+
+void List2_12_25() {
+  final car = Vehicle.truck(passengers: 5);
+  print(car.carbonFootprint); // Prints: 80
+}
