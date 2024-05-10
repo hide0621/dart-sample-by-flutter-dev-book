@@ -7,7 +7,7 @@ enum Shape {
 }
 
 void List2_12_23() {
-  // ここでenumのオブジェクト(Shape型のtriangle)を作成している
+  // ここでenumのオブジェクト(Shape型のtriangleというオブジェクト)を作成している
   final shape = Shape.triangle;
 
   switch (shape) {
