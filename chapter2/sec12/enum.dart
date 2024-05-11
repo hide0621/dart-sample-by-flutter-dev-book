@@ -50,34 +50,38 @@ void List2_12_23() {
   print(Shape.square.name); // Prints: square
 }
 
-/// フィールドやfactoryコンストラクタ、constコンストラクタを持つenumを作りたい
-/// ただし上記のようなenumは作成できない
+/// フィールドやメソッド、factoryコンストラクタ、constコンストラクタを持つenumを作りたい
+
+enum Shape1 {
+  circle(corner: 0),
+  triangle(corner: 3),
+  square(corner: 4); // セミコロンをつける。「,」にするとエラーになる！
+
+  final int corner;
+
+  const Shape1({required this.corner});
+
+  factory Shape1.ellipse() {
+    return Shape1.circle;
+  }
+
+  // ゲッターを書いてみた
+  int get getCorner => corner;
+}
+
+void List2_12_244() {
+  final ellipse = Shape1.ellipse();
+  print(ellipse.corner);
+  print(ellipse.getCorner);
+}
+
+/// 上記のようなenumを作る代わりに
 /// そのため下記のように
 /// ・プライベートなコンストラクタを定義してこのファイル内でしか作成できないようにする
 /// ・静的なフィールドを定義して、プライベートなコンストラクタの結果を受けるように定義（オブジェクトになる）
 /// ・ファクトリメソッドを定義して、enumを模したオブジェクトを作成する
 /// という方法で実装する
-// enum Shape1 {
-//   circle(corner : 0),
-//   triangle(corner : 3),
-//   square(corner : 4),
-//
-//   final int corner;
-//
-//   const Shape2({required this.corner});
-//
-//   factory Shape2.ellipse() {
-//     return Shape2.circle;
-//   }
-// }
-//
-// void List2_12_244() {
-//
-//   final ellipse = Shape1.ellipse();
-//   print(ellipse.corner);
-// }
-
-/// 上記のコードは以下のコードと同じ意味になる
+/// 下記のコードは上記のコードと意味は同じである
 class Shape2 {
   final int corner;
 
@@ -97,7 +101,7 @@ void List2_12_24() {
   print(ellipse.corner); // Prints: 0
 }
 
-/// ただしどう言う訳か、この書き方なら先述の出来ないとされていた高度なEnumも表現できる...
+/// 別の高度なEnumの例
 /// [参照] https://dart.dev/language/enums#declaring-enhanced-enums
 enum Vehicle implements Comparable<Vehicle> {
   car(tires: 4, passengers: 5, carbonPerKilometer: 400),

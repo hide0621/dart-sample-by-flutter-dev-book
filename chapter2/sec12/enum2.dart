@@ -18,7 +18,7 @@ enum Shape1 {
   int get getCorner => corner;
 }
 
-void List2_12_244() {
+void List2_12_2444() {
   final ellipse = Shape1.ellipse();
   print(ellipse.corner);
   print(ellipse.getCorner);
