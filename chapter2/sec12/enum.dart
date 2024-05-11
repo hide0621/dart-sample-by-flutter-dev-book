@@ -1,6 +1,7 @@
 /// Enumについて
 
 enum Shape {
+  /// 以下は列挙子
   circle,
   triangle,
   square,
@@ -8,6 +9,7 @@ enum Shape {
 
 void List2_12_23() {
   // ここでenumのオブジェクト(Shape型のtriangleというオブジェクト)を作成している
+  /// enumの利用方法は「enumの型名.列挙子名」という形で呼び出す
   final shape = Shape.triangle;
 
   switch (shape) {
@@ -23,6 +25,29 @@ void List2_12_23() {
     default:
       print('不明');
   }
+
+  /// enumの型には全ての列挙子をリストで得られるvaluesプロパティがある
+  // 上で生成したshapeとは別のShape型の引数をラムダ（コールバック関数）に渡している
+  // これはそれぞれのshapeが異なるスコープにあるからである
+  // 上のshapeはList2_12_23関数内で定義されているが、このshapeはforEachメソッドのコールバック関数のスコープ内で定義されている
+  Shape.values.forEach((shape) {
+    print(shape.name);
+  });
+
+  /// enumの利用方法は「enumの型名.列挙子名」という形で呼び出す
+  final myShape = Shape.circle;
+  assert(myShape == Shape.circle);
+  // assert(myShape == Shape.triangle); // AssertionError
+
+  /// enumの各列挙子はインデックスを持っていて、ゲッターから取得できる
+  print(myShape.index); // Prints: 0
+  print(Shape.triangle.index); // Prints: 1
+  print(Shape.square.index); // Prints: 2
+
+  /// また列挙子の名前をString型で取得できえうnameプロパティも持っている
+  print(myShape.name); // Prints: circle
+  print(Shape.triangle.name); // Prints: triangle
+  print(Shape.square.name); // Prints: square
 }
 
 /// フィールドやfactoryコンストラクタ、constコンストラクタを持つenumを作りたい
@@ -94,6 +119,7 @@ enum Vehicle implements Comparable<Vehicle> {
   bool get isTwoWheeled => this == Vehicle.bicycle;
 
   // factoryコンストラクタも書いてみた
+  /// enumの利用方法は「enumの型名.列挙子名(メソッド名も同様)」という形で呼び出す
   factory Vehicle.truck({required int passengers}) {
     return Vehicle.car;
   }
