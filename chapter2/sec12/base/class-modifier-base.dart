@@ -1,6 +1,10 @@
 /// base修飾子
 ///
+/// 特徴（自身が宣言されたライブラリ以外での場合）
 ///
+/// インスタンス化　O
+/// extendsキーワードによる継承 O
+/// implementsキーワードによる実装 X
 
 library chapter2.sec12.base.class_modifier_base;
 
