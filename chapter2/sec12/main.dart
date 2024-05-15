@@ -7,7 +7,8 @@
 // import 'class-inheritance.dart';
 // import 'extension-method.dart';
 // import 'base/base-use.dart';
-import 'base/class-modifier-base.dart';
+// import 'base/class-modifier-base.dart';
+import 'interface/interface-use.dart';
 // import 'class-modifier-abstract.dart';
 // import 'enum.dart';
 // import 'enum2.dart';
@@ -68,5 +69,7 @@ void main() {
   // List2_12_26();
 
   // List2_12_27();
-  List2_12_28();
+  // List2_12_28();
+
+  List2_12_29();
 }
