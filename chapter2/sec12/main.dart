@@ -10,7 +10,8 @@
 // import 'base/class-modifier-base.dart';
 // import 'abstract_interface/use-abstract-interface.dart';
 // import 'final/final-use.dart';
-import 'mixin/class-modifier-mixin.dart';
+// import 'mixin/class-modifier-mixin.dart';
+import 'sealed/class-modifier-sealed.dart';
 // import 'interface/interface-use.dart';
 // import 'class-modifier-abstract.dart';
 // import 'enum.dart';
@@ -80,5 +81,7 @@ void main() {
 
   // List2_12_31();
 
-  List2_12_32();
+  // List2_12_32();
+
+  List2_12_33();
 }
