@@ -1,4 +1,10 @@
 /// sealed修飾子
+///
+/// 特徴
+///
+/// - sealed修飾子を使うとサブクラス（サブタイプとも）をEnumのように扱うことができる
+/// - sealed修飾子が付与されたクラスは暗黙的にabstract classとなる、故にインスタンス化はできない
+/// - sealed修飾子が付与されたクラスは、そのファイル内でのみ継承が可能（自身が宣言されたライブラリ以外でのサブタイプ化は禁止）
 
 sealed class Shape {
   abstract int corner;
@@ -9,6 +15,8 @@ void List2_12_33() {
   // final shape = Shape(); // Abstract classes can't be instantiated.
   print('sealed修飾子はabstract classとして扱われるため、インスタンス化はできない');
 }
+
+/// 以下はsealed修飾子を用いて、サブタイプをEnumのように扱っている例
 
 class Rectangle extends Shape {
   @override
