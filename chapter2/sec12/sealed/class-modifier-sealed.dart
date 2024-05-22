@@ -42,3 +42,26 @@ void List2_12_34() {
   print('triangle: ${triangle.corner}');
   print('circle: ${circle.corner}');
 }
+
+Shape getShape() {
+  return Rectangle();
+}
+
+void List2_12_35() {
+  final shape = getShape();
+
+  /// switch文で全てのサブタイプが網羅されていなければ、コンパイラが警告を出す
+  ///
+  /// 例：（Circleを満たしていない場合）The type 'Shape' is not exhaustively matched by the switch cases since it doesn't match 'Circle()'.
+  switch (shape) {
+    case Rectangle():
+      print('Rectangle');
+      break;
+    case Triangle():
+      print('Triangle');
+      break;
+    case Circle():
+      print('Circle');
+      break;
+  }
+}
