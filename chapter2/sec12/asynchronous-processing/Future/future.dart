@@ -38,7 +38,7 @@ void List2_12_38() {
   fetchUserName().then((name) {
     print('User name is $name');
   }).catchError((e) {
-    print(e);
+    print(e); // User not found
   });
 }
 
@@ -48,7 +48,7 @@ void List2_12_39() async {
     final name = await fetchUserName();
     print('User name is $name');
   } catch (e) {
-    print(e);
+    print(e); // User not found
   }
 }
 
@@ -56,5 +56,5 @@ void List2_12_39() async {
 void List2_12_40() async {
   final result = await fetchUserName()
       .then((name) => 'User name is $name', onError: (e, st) => 'Unknown User');
-  print(result);
+  print(result); // Unknown User
 }
