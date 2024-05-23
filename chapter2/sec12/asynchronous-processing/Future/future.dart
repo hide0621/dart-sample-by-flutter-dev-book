@@ -52,7 +52,7 @@ void List2_12_39() async {
   }
 }
 
-/// Future型のエラーハンドリング~その3~
+/// Future型のエラーハンドリング~その3~（例外発生時に代替の値を返したい場合）
 void List2_12_40() async {
   final result = await fetchUserName()
       .then((name) => 'User name is $name', onError: (e, st) => 'Unknown User');
