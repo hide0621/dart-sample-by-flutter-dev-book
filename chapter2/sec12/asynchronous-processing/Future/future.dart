@@ -20,5 +20,21 @@ Future<void> List2_12_37() async {
 
 void main() {
   // List2_12_36();
-  List2_12_37();
+  // List2_12_37();
+  List2_12_38();
+}
+
+/// Future型のエラーハンドリング
+Future<String> fetchUserName() {
+  var str =
+      Future.delayed(const Duration(seconds: 1), () => throw 'User not found');
+  return str;
+}
+
+void List2_12_38() {
+  fetchUserName().then((name) {
+    print('User name is $name');
+  }).catchError((e) {
+    print(e);
+  });
 }
