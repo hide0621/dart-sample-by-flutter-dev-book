@@ -22,7 +22,8 @@ void main() {
   // List2_12_36();
   // List2_12_37();
   // List2_12_38();
-  List2_12_39();
+  // List2_12_39();
+  List2_12_40();
 }
 
 /// Future型のエラーハンドリング~対象の関数~
@@ -49,4 +50,11 @@ void List2_12_39() async {
   } catch (e) {
     print(e);
   }
+}
+
+/// Future型のエラーハンドリング~その3~
+void List2_12_40() async {
+  final result = await fetchUserName()
+      .then((name) => 'User name is $name', onError: (e, st) => 'Unknown User');
+  print(result);
 }
