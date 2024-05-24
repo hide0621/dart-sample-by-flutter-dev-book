@@ -97,6 +97,21 @@ Future<void> List2_12_47() async {
   print('Done');
 }
 
+/// streamには購読をキャンセルしない限り終了しない特性を持ったものもある
+/// 例えば、以下のStream.periodic()は、指定した間隔で値を生成するStreamを生成する
+/// このStreamは、購読をキャンセルしない限り終了しないので、
+/// このような状況にあるStreamで async - await for を用いると以降の処理が実行されないので注意！
+Future<void> List2_12_48() async {
+  await for (final count
+      in Stream.periodic(const Duration(seconds: 1), (i) => i)) {
+    print(count);
+  }
+
+  /// このコードは実行されない
+  print('-----');
+  print('Done');
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -104,5 +119,6 @@ void main() {
   // List2_12_44();
   // List2_12_45();
   // List2_12_46();
-  List2_12_47();
+  // List2_12_47();
+  List2_12_48();
 }
