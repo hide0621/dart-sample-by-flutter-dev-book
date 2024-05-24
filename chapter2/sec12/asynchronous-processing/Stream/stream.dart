@@ -88,11 +88,21 @@ void List2_12_46() async {
   });
 }
 
+/// 上記関数をリファクタリングするとこうなる（こっちの方が可読性が高そう）
+Future<void> List2_12_47() async {
+  await for (final language in languages()) {
+    print(language);
+  }
+  print('-----');
+  print('Done');
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
   // List2_12_43();
   // List2_12_44();
   // List2_12_45();
-  List2_12_46();
+  // List2_12_46();
+  List2_12_47();
 }
