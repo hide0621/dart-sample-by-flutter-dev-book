@@ -26,7 +26,20 @@ Future<void> List2_12_42() async {
   }
 }
 
+/// Streamの購読（Listen）をキャンセル、一時停止する方法~その1~
+void List2_12_43() {
+  final file = File('file.txt');
+  final Stream<List<int>> stream = file.openRead();
+  final subscription = stream.listen((data) {
+    print('data: ${data.length} bytes');
+  });
+
+  // 購読をキャンセル
+  subscription.cancel();
+}
+
 void main() {
   // List2_12_41();
-  List2_12_42();
+  // List2_12_42();
+  List2_12_43();
 }
