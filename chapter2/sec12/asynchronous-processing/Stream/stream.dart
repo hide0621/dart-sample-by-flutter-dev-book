@@ -78,10 +78,21 @@ void List2_12_45() {
   });
 }
 
+/// streamの終了時に処理を実行する方法
+void List2_12_46() async {
+  languages().listen((language) {
+    print(language);
+  }, onDone: () {
+    print('-----');
+    print('Done');
+  });
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
   // List2_12_43();
   // List2_12_44();
-  List2_12_45();
+  // List2_12_45();
+  List2_12_46();
 }
