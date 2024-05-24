@@ -17,6 +17,16 @@ void List2_12_41() {
   });
 }
 
+/// 上のコードをリファクタリングするとこうなる（コードの量が減り、読みやすくなる？）
+Future<void> List2_12_42() async {
+  final file = File('file.txt');
+  final Stream<List<int>> stream = file.openRead();
+  await for (final data in stream) {
+    print('data: ${data.length} bytes');
+  }
+}
+
 void main() {
-  List2_12_41();
+  // List2_12_41();
+  List2_12_42();
 }
