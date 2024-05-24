@@ -59,9 +59,29 @@ void List2_12_44() async {
   // subscription.cancel();
 }
 
+/// Stream型を生成する関数
+Stream<String> languages() async* {
+  await Future.delayed(const Duration(seconds: 1));
+  yield 'Dart';
+  await Future.delayed(const Duration(seconds: 1));
+  yield 'Kotlin';
+  await Future.delayed(const Duration(seconds: 1));
+  yield 'Swift';
+  await Future.delayed(const Duration(seconds: 1));
+  yield* Stream.fromIterable(['JavaScript', 'C++', 'Go']);
+}
+
+/// 上記関数の実行方法
+void List2_12_45() {
+  languages().listen((language) {
+    print(language);
+  });
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
   // List2_12_43();
-  List2_12_44();
+  // List2_12_44();
+  List2_12_45();
 }
