@@ -124,6 +124,22 @@ Future<void> List2_12_49() async {
   print('Done');
 }
 
+/// Stream型のエラーハンドリング
+Stream<String> language2() async* {
+  await Future.delayed(const Duration(seconds: 1));
+  yield 'Dart';
+  await Future.delayed(const Duration(seconds: 1));
+  throw Exception('Some Error');
+}
+
+void List2_12_50() {
+  language2().listen((language) {
+    print(language);
+  }, onError: (e) {
+    print(e);
+  });
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -133,5 +149,6 @@ void main() {
   // List2_12_46();
   // List2_12_47();
   // List2_12_48();
-  List2_12_49();
+  // List2_12_49();
+  List2_12_50();
 }
