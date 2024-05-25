@@ -140,6 +140,17 @@ void List2_12_50() {
   });
 }
 
+/// 上記のコードをtry-catchでリファクタリングするとこうなる
+Future<void> List2_12_51() async {
+  try {
+    await for (final language in language2()) {
+      print(language);
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -150,5 +161,6 @@ void main() {
   // List2_12_47();
   // List2_12_48();
   // List2_12_49();
-  List2_12_50();
+  // List2_12_50();
+  List2_12_51();
 }
