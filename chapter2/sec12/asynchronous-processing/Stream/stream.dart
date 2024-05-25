@@ -112,6 +112,18 @@ Future<void> List2_12_48() async {
   print('Done');
 }
 
+/// 上記のような関数で、特定の条件を満たしたらstreamを終了させる方法
+/// Stream.takeメソッドを使用してストリームから特定の数のイベントを取得し、それ以降のイベントを無視させる
+Future<void> List2_12_49() async {
+  await for (final count
+      in Stream.periodic(const Duration(seconds: 1), (i) => i).take(6)) {
+    print(count);
+  }
+
+  print('-----');
+  print('Done');
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -120,5 +132,6 @@ void main() {
   // List2_12_45();
   // List2_12_46();
   // List2_12_47();
-  List2_12_48();
+  // List2_12_48();
+  List2_12_49();
 }
