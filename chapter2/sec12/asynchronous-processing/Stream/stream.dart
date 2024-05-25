@@ -3,10 +3,13 @@
 ///
 /// 非同期に連続した値を扱う時のデータ型（ログストリームみたいな？）
 ///
+/// どことなくGo言語のchannelに似ているような...
+///
 /// 特徴：
 /// -
 /// -
 
+import 'dart:async';
 import 'dart:io';
 
 void List2_12_41() {
@@ -151,6 +154,32 @@ Future<void> List2_12_51() async {
   }
 }
 
+/// StreamControllerを使用して、Streamを生成する方法
+class Counter {
+  int _count = 0;
+  StreamController<int> _controller = StreamController<int>();
+
+  Stream<int> get stream => _controller.stream;
+
+  void increment() {
+    _count++;
+    _controller.add(_count);
+  }
+}
+
+Future<void> List2_12_52() async {
+  final counter = Counter();
+
+  counter.increment();
+  counter.increment();
+
+  counter.stream.listen((count) {
+    print(count);
+  });
+
+  counter.increment();
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -162,5 +191,6 @@ void main() {
   // List2_12_48();
   // List2_12_49();
   // List2_12_50();
-  List2_12_51();
+  // List2_12_51();
+  List2_12_52();
 }
