@@ -196,6 +196,21 @@ Future<void> List2_12_53() async {
   });
 }
 
+Stream<int> numberStream() {
+  return Stream.fromIterable(
+      List.generate(10, (index) => index)); // 0から9までの整数を生成
+}
+
+void List2_12_54() {
+  numberStream()
+      .where((num) => num % 2 == 0) // 偶数のみを取得（0, 2, 4, 6, 8）
+      .map((num) => num * 2) // 2倍にする（0, 4, 8, 12, 16）
+      .take(3) // 先頭から3つの要素を取得（0、4, 8）
+      .listen((num) {
+    print(num); // 0, 4, 8
+  });
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -209,5 +224,6 @@ void main() {
   // List2_12_50();
   // List2_12_51();
   // List2_12_52();
-  List2_12_53();
+  // List2_12_53();
+  List2_12_54();
 }
