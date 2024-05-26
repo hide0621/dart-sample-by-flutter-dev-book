@@ -2,6 +2,15 @@ import 'dart:async';
 
 /// 非同期処理
 /// Zoneについて
+///
+/// 特徴： 非同期処理のコンテキストを管理している、その機能の1つに非同期処理で補足されなかった例外のハンドリング機能がある
+///
+/// 下記のrunZonedGuarded関数の第一引数で受け取った処理を自身のZoneで実行し
+/// 例外が発生した場合は第二引数で受け取った関数を呼び出す
+///
+/// ただし、FlutterのエラーハンドリングはZoneではなく `PlatformDispatcher` を使うことが一般的
+///
+/// ただその一方で、実際は全てのDartコードはZoneで実行されていて、main関数は暗黙的にdefault Zoneで実行されている
 
 /// Zoneを使わない場合
 Future<String> fetchUserName() {
