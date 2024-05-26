@@ -180,6 +180,22 @@ Future<void> List2_12_52() async {
   counter.increment();
 }
 
+Future<void> List2_12_53() async {
+  final broadcastStream = languages().asBroadcastStream();
+
+  await Future.delayed(const Duration(milliseconds: 1000));
+
+  broadcastStream.listen((language) {
+    print('Subscriber 1: $language');
+  });
+
+  await Future.delayed(const Duration(milliseconds: 1100));
+
+  broadcastStream.listen((language) {
+    print('Subscriber 2: $language');
+  });
+}
+
 void main() {
   // List2_12_41();
   // List2_12_42();
@@ -192,5 +208,6 @@ void main() {
   // List2_12_49();
   // List2_12_50();
   // List2_12_51();
-  List2_12_52();
+  // List2_12_52();
+  List2_12_53();
 }
